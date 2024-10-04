@@ -1,7 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://im4axeme4rff"]
+[gd_scene load_steps=4 format=3 uid="uid://im4axeme4rff"]
 
 [ext_resource type="PackedScene" uid="uid://drpdnc0bowjei" path="res://Scenes/player.tscn" id="1_a356g"]
+[ext_resource type="PackedScene" uid="uid://bao402kmlnv0s" path="res://Scenes/perehod.tscn" id="2_41y65"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c46yl"]
+size = Vector2(65, 77)
 
 [node name="Test" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_a356g")]
+
+[node name="Perehod" parent="." instance=ExtResource("2_41y65")]
+change_scene = "res://Scenes/test_2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Perehod"]
+position = Vector2(175, 37)
+shape = SubResource("RectangleShape2D_c46yl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 178.0
+offset_top = 1.0
+offset_right = 218.0
+offset_bottom = 41.0
