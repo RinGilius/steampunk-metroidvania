@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b7bb8q28txnsh"]
+
+[node name="LoanObj" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 2
+metadata/loan_cords = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area_Loan" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Loan"]

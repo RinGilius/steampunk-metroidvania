@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://drpdnc0bowjei"]
+[gd_scene load_steps=25 format=3 uid="uid://drpdnc0bowjei"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ai24e"]
 [ext_resource type="Texture2D" uid="uid://cq1o3tstxsgnh" path="res://Accets/Lighthouse_man.webp" id="2_a0dir"]
@@ -131,6 +131,45 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_s0l6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mhs64"]
+resource_name = "alpha-"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yl6fl"]
+_data = {
+"RESET": SubResource("Animation_s0l6p"),
+"alpha-": SubResource("Animation_mhs64")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w21qw"]
+radius = 21.0
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 20
@@ -148,3 +187,18 @@ sprite_frames = SubResource("SpriteFrames_f5npg")
 animation = &"player_idle"
 frame = 2
 frame_progress = 0.0166077
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yl6fl")
+}
+
+[node name="Area_enemys" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_enemys"]
+shape = SubResource("CircleShape2D_w21qw")
+
+[connection signal="area_entered" from="Area_enemys" to="." method="_on_area_enemys_area_entered"]
+[connection signal="area_exited" from="Area_enemys" to="." method="_on_area_enemys_area_exited"]

@@ -4,6 +4,8 @@ var speed = 10000
 
 @onready var anim = $AnimatedSprite2D
 
+var is_in_des = false
+
 var jump_velocity = -25000
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -19,6 +21,7 @@ func _physics_process(delta):
 			velocity.y = jump_velocity * delta
 	var direction = Input.get_axis("player_left","player_right")
 	velocity.x = direction * speed * delta
+	destructive()
 	animate()
 	move_and_slide()
 
@@ -31,3 +34,14 @@ func animate():
 		anim.play("player_move")
 	else:
 		anim.play("player_idle")
+
+
+func _on_area_enemys_area_entered(area):
+	is_in_des = true
+
+func _on_area_enemys_area_exited(area):
+	is_in_des = false
+
+func destructive():
+	if is_in_des == true and Input.is_action_just_pressed("is_move_box"):
+		$"../DestructiveObject".queue_free()
