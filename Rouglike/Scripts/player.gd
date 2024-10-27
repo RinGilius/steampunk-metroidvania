@@ -6,6 +6,8 @@ var speed = 10000
 
 var is_in_des = false
 
+var on_touch = false
+
 var jump_velocity = -25000
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -37,10 +39,13 @@ func animate():
 
 
 func _on_area_enemys_area_entered(area):
-	is_in_des = true
+	if area.name == "Area_Destructive":
+		is_in_des = true
+	
 
 func _on_area_enemys_area_exited(area):
-	is_in_des = false
+	if area.name == "Area_Destructive":
+		is_in_des = false
 
 func destructive():
 	if is_in_des == true and Input.is_action_just_pressed("is_move_box"):
