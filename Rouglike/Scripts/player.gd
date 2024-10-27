@@ -17,7 +17,12 @@ func _ready():
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
+	if Input.is_action_just_pressed("enteract") and g.is_dialog == false:#'''an#'''and g.is_dialog == false and is_death == false and g.is_cutscene == false and velocity == Vector2.ZERO'''d g.is_dialog == false and is_death == false and g.is_cutscene == false and velocity == Vector2.ZERO'''
+			var ent = %enteract.get_overlapping_areas()
+			if ent.size() > 0:
+				ent[0].action()
+				return
+				
 	if Input.is_action_just_pressed("player_jump"):
 		if is_on_floor():
 			velocity.y = jump_velocity * delta

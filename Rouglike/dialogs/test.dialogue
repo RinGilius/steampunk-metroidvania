@@ -1,0 +1,13 @@
+~ start
+
+Lib: [[Hi|Hello|Howdy]], this is some dialogue.
+Lib: Here are some choices.
+- First one
+	Lib: You picked the first one.
+- Second one
+	Lib: You picked the second one.
+- Start again => start
+- End the conversation => END
+Lib: For more dicks
+
+=> END

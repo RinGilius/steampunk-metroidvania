@@ -31,7 +31,7 @@ var dialogue_line: DialogueLine:
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
-			#get_tree().create_timer(0.3).timeout.connect(func():g.is_dialog = false)
+			get_tree().create_timer(0.3).timeout.connect(func():g.is_dialog = false)
 			queue_free()
 			return
 
@@ -125,7 +125,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 	#if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
 		#next(dialogue_line.next_id)
-	if event.is_action_pressed("enteract") or event.is_action_pressed("click_L"):
+	if event.is_action_pressed("enteract"):# or event.is_action_pressed("click_L")
 		if get_viewport().gui_get_focus_owner() == balloon:
 			next(dialogue_line.next_id)
 

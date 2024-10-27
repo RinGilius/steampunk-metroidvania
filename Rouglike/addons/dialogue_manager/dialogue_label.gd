@@ -18,7 +18,7 @@ signal finished_typing()
 
 
 ## The action to press to skip typing.
-@export var skip_action: String = "click_R"
+@export var skip_action: String = "draging"
 
 ## The speed with which the text types out.
 @export var seconds_per_step: float = 0.02
@@ -108,7 +108,7 @@ func skip_typing() -> void:
 # Type out the next character(s)
 func _type_next(delta: float, seconds_needed: float) -> void:
 	#$"../anim".play("typing")
-	sfx.play_sound(preload("res://ost/typing.wav"))
+	#sfx.play_sound(preload("res://ost/typing.wav"))
 	
 	if visible_characters == get_total_character_count():
 		return

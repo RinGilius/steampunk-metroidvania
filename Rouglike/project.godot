@@ -18,11 +18,17 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Scenes/game_manager.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+g="*res://Scripts/global.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=995
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -61,6 +67,15 @@ draging={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
+enteract={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"key_label":0,"unicode":122,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogs/test.dialogue")
 
 [layer_names]
 
