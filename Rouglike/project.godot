@@ -33,10 +33,6 @@ window/stretch/scale_mode="integer"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
-
 [input]
 
 player_left={
