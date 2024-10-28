@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://drpdnc0bowjei"]
+[gd_scene load_steps=26 format=3 uid="uid://drpdnc0bowjei"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ai24e"]
 [ext_resource type="Texture2D" uid="uid://cq1o3tstxsgnh" path="res://Accets/Lighthouse_man.webp" id="2_a0dir"]
+[ext_resource type="PackedScene" uid="uid://bgmx8objfghse" path="res://Scenes/enteract.tscn" id="3_l3i7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtdvu"]
 size = Vector2(8, 34)
@@ -208,6 +209,9 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_enemys"]
 shape = SubResource("CircleShape2D_w21qw")
+
+[node name="enteract" parent="." instance=ExtResource("3_l3i7g")]
+unique_name_in_owner = true
 
 [connection signal="area_entered" from="Area_enemys" to="." method="_on_area_enemys_area_entered"]
 [connection signal="area_exited" from="Area_enemys" to="." method="_on_area_enemys_area_exited"]
