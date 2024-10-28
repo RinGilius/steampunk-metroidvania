@@ -47,12 +47,6 @@ func _physics_process(delta):
 		if speed >= max_speed:
 			speed = max_speed
 		move_and_slide()
-				
-	if Input.is_action_just_pressed("player_jump"):
-		if is_on_floor():
-			velocity.y = jump_velocity * delta
-	var direction = Input.get_axis("player_left","player_right")
-	velocity.x = direction * speed * delta
 	destructive()
 	animate()
 	
