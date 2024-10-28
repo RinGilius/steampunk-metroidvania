@@ -12,6 +12,8 @@ var is_in_des = false
 
 var on_touch = false
 
+# jump velocity
+
 @export var jump_velocity = -300
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
