@@ -37,6 +37,7 @@ texture = ExtResource("2_as76g")
 
 [node name="Perehod" parent="." instance=ExtResource("3_o4pos")]
 position = Vector2(730, 170.84)
+change_scene = "res://Scenes/test_2.tscn"
 
 [node name="Icon" type="Sprite2D" parent="Perehod"]
 position = Vector2(-46, -29)
