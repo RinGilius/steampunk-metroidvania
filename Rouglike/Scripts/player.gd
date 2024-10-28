@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
-var speed = 10000
+@export var speed = 200
+
+@export var max_speed = 200
+
+@export var acel = 0
 
 @onready var anim = $AnimatedSprite2D
 
@@ -8,7 +12,7 @@ var is_in_des = false
 
 var on_touch = false
 
-var jump_velocity = -25000
+@export var jump_velocity = -300
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
@@ -22,6 +26,21 @@ func _physics_process(delta):
 			if ent.size() > 0:
 				ent[0].action()
 				return
+	if g.is_dialog == false:
+		if Input.is_action_just_pressed("player_jump") && is_on_floor():
+			velocity.y = jump_velocity
+			
+		var direction = Input.get_axis("player_left","player_right")
+		if direction:
+			speed += 1.5
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x,0,speed)
+			speed = 125
+			
+		if speed >= max_speed:
+			speed = max_speed
+		move_and_slide()
 				
 	if Input.is_action_just_pressed("player_jump"):
 		if is_on_floor():
@@ -30,7 +49,7 @@ func _physics_process(delta):
 	velocity.x = direction * speed * delta
 	destructive()
 	animate()
-	move_and_slide()
+	
 
 func animate():
 	if velocity.x > 0:
