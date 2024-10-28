@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy870bcdkydx2"]
+
+[ext_resource type="Script" path="res://Scripts/trade.gd" id="1_ay0n6"]
+[ext_resource type="Texture2D" uid="uid://dc6fher3ocadx" path="res://icon.svg" id="2_lr3ya"]
+
+[node name="trade" type="CanvasLayer"]
+script = ExtResource("1_ay0n6")
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_right = 577.0
+offset_bottom = 1075.0
+item_count = 2
+item_0/text = "betc"
+item_0/icon = ExtResource("2_lr3ya")
+item_1/text = "anal"
