@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name player
+
 @export var speed = 200
 
 @export var max_speed = 200
