@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=16 format=3 uid="uid://im4axeme4rff"]
+=======
 [gd_scene load_steps=13 format=3 uid="uid://im4axeme4rff"]
+>>>>>>> 39f9d66ef5406f765290086c1211feb5d3fc42e2
 
 [ext_resource type="PackedScene" uid="uid://drpdnc0bowjei" path="res://Scenes/player.tscn" id="1_a356g"]
 [ext_resource type="PackedScene" uid="uid://bao402kmlnv0s" path="res://Scenes/perehod.tscn" id="2_41y65"]
@@ -23,6 +27,46 @@ size = Vector2(26, 24)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4faue"]
 radius = 99.58
 
+<<<<<<< HEAD
+[sub_resource type="Animation" id="Animation_elf2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(89, 38)]
+}
+
+[sub_resource type="Animation" id="Animation_o6rus"]
+resource_name = "roll"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(89, 38), Vector2(89, 48.855)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s5nvr"]
+_data = {
+"RESET": SubResource("Animation_elf2p"),
+"roll": SubResource("Animation_o6rus")
+}
+
+=======
+>>>>>>> 39f9d66ef5406f765290086c1211feb5d3fc42e2
 [node name="Test" type="Node2D"]
 
 [node name="Perehod" parent="." instance=ExtResource("2_41y65")]
@@ -82,8 +126,13 @@ scale = Vector2(0.1875, 0.1875)
 texture = ExtResource("4_scqc4")
 
 [node name="Icon" type="Sprite2D" parent="."]
+<<<<<<< HEAD
+position = Vector2(89, 38)
+scale = Vector2(0.32, 0.32)
+=======
 position = Vector2(109, 30)
 scale = Vector2(0.140625, 0.453125)
+>>>>>>> 39f9d66ef5406f765290086c1211feb5d3fc42e2
 texture = ExtResource("4_scqc4")
 
 [node name="enterable" parent="Icon" instance=ExtResource("7_h55j3")]
@@ -91,4 +140,13 @@ texture = ExtResource("4_scqc4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/enterable"]
 shape = SubResource("CircleShape2D_4faue")
 
+<<<<<<< HEAD
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Icon"]
+libraries = {
+"": SubResource("AnimationLibrary_s5nvr")
+}
+autoplay = "roll"
+
+=======
+>>>>>>> 39f9d66ef5406f765290086c1211feb5d3fc42e2
 [editable path="DestructiveObject"]

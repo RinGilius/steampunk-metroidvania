@@ -95,6 +95,15 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+<<<<<<< HEAD
+offset_left = 11.0
+offset_top = -58.0
+offset_right = 480.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.32, 0.32)
+=======
 offset_left = 81.0
 offset_top = -247.0
 offset_right = 550.0
@@ -102,6 +111,7 @@ offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.725, 0.725)
+>>>>>>> 39f9d66ef5406f765290086c1211feb5d3fc42e2
 theme = SubResource("Theme_qq3yp")
 theme_override_styles/panel = SubResource("StyleBoxTexture_kh1tb")
 
@@ -182,7 +192,11 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_n8jti")
+<<<<<<< HEAD
+theme_override_font_sizes/font_size = 48
+=======
 theme_override_font_sizes/font_size = 32
+>>>>>>> 39f9d66ef5406f765290086c1211feb5d3fc42e2
 theme_override_styles/focus = SubResource("StyleBoxTexture_8r4vo")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_tgy67")
 theme_override_styles/hover = SubResource("StyleBoxTexture_e4rif")

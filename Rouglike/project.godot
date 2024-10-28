@@ -13,6 +13,7 @@ config_version=5
 config/name="Rouglike"
 run/main_scene="res://Scenes/test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -23,8 +24,14 @@ g="*res://Scripts/global.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=995
+window/size/viewport_width=1980
+window/size/viewport_height=1080
+window/stretch/scale=5.0
+window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [editor_plugins]
 
